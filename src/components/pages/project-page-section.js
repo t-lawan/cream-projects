@@ -35,7 +35,7 @@ padding-top: 1rem;
 
 
 const ProjectsLink = styled(Link)`
-
+	padding: 1rem;
 `;
 const ContentSectionsWrapper = styled.div``;
 

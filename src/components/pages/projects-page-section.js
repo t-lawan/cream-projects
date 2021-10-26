@@ -95,8 +95,12 @@ const ProjectsPageSection = () => {
 					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
 						<ProjectTile project={project} />
 					</ProjectLink>
-					<ProjectTile project={project} />
-					<ProjectTile project={project} />
+					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
+						<ProjectTile project={project} />
+					</ProjectLink>
+					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
+						<ProjectTile project={project} />
+					</ProjectLink>
 				</React.Fragment>
 			))}
 		</ProjectsWrapper>
