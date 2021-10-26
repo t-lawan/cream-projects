@@ -15,13 +15,13 @@ import ProjectsImg from '../../assets/images/Projects.svg';
 import ProjectsOutlineImg from '../../assets/images/Projects.Outline.svg';
 import { PageMap } from '../../utility/config';
 import { useLocation } from '@reach/router';
-import { size } from '../../styles/index.styles';
+import { size, Layers } from '../../styles/index.styles';
 
 const NavbarWrapper = styled.header`
 	position: ${(props) => (props.displayBelow ? 'relative' : 'fixed')};
 	width: 100vw;
 	padding: 1rem;
-	z-index: 50;
+	z-index: ${Layers.NAVBAR};
 	@media screen and (max-width: ${size.tablet}) {
 		/* display: none; */
 		padding: 0rem;
@@ -59,7 +59,6 @@ const NavbarDesktopWrapper = styled.div`
 
 const NavbarMobileWrapper = styled.div`
 	display: none;
-	/* z-index: 50; */
 
 	@media screen and (max-width: ${size.tablet}) {
 		display: flex;
@@ -70,8 +69,6 @@ const NavbarMobileWrapper = styled.div`
 	}
 `;
 const NavbarMobileOverlayWrapper = styled.div`
-	/* z-index: 20; */
-
 	display: none;
 	background: black;
 	width: 100vw;
@@ -95,7 +92,7 @@ const NavbarMobileLinksWrapper = styled.div`
 	height: 100vh;
 `;
 
-const NavbarMobileHamburger = styled.p`z-index: 50;`;
+const NavbarMobileHamburger = styled.p`z-index: ${Layers.NAVBAR};`;
 
 const NavbarFlexImageItem = styled.div``;
 

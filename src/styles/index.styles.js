@@ -13,6 +13,12 @@ export const size = {
     desktop: "1500px"
   }
 
+export const Layers = {
+    BACKGROUND_VIDEO: 10,
+    NAVBAR: 50,
+    VIDEO_PLAYER_ICONS: 50 
+  }
+
 export const Colour = {
     grey: '#d4dbde',
     progress_scroll_bg: 'rgb(255,255,255, 0.2)',

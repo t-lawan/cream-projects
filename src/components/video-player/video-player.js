@@ -1,34 +1,42 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Colour } from '../../styles/index.styles';
-import PlayImage from '../../assets/images/play.png'
-
+import { Colour, Layers } from '../../styles/index.styles';
+import PlayImage from '../../assets/images/play.png';
+import PauseImage from '../../assets/images/pause.png';
 
 const VideoWrapper = styled.div`position: relative;`;
-const Video = styled.video`
-	z-index: 10;
+const Video = styled.video`z-index: ${Layers.BACKGROUND_VIDEO};`;
 
+const IconWrapper = styled.div`
+	z-index: ${Layers.VIDEO_PLAYER_ICONS};
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 `;
 
-const Icon =  styled.img`
-	position: absolute;
-	bottom: 50%;
-	left: 50%;
+const Icon = styled.img`
+	/* position: absolute;
+	bottom: 45%;
+	left: 45%;
 	color: red;
 	text-align: center;
-	display: ${props => props.show ? 'block' : 'none'};
-	z-index: 50;
-`
+	
+	z-index: 50; */
+	width: 7.5%;
+	display: ${(props) => (props.show ? 'block' : 'none')};
+	filter: invert(1);
+`;
 
 const PlayButton = styled.p`
-	position: absolute;
-	bottom: 50%;
-	left: 50%;
-	color: red;
-	text-align: center;
-	display: ${props => props.show ? 'block' : 'none'};
-	z-index: 50;
+	display: ${(props) => (props.show ? 'block' : 'none')};
 `;
 
 const ProgressBarWrapper = styled.div`
@@ -36,10 +44,8 @@ const ProgressBarWrapper = styled.div`
 	width: 100%;
 	bottom: 2.5%;
 	text-align: center;
-	z-index: 50;
-	display: ${props => props.show ? 'block' : 'none'};
-
-
+	z-index: ${Layers.VIDEO_PLAYER_ICONS};
+	display: ${(props) => (props.show ? 'block' : 'none')};
 `;
 
 const ProgressBar = styled.progress`
@@ -103,32 +109,35 @@ const VideoPlayer = (props) => {
 
 	const play = () => {
 		videoEl.current.play();
-		setIsPlaying(true)
-	}
+		setIsPlaying(true);
+	};
 
 	const pause = () => {
 		videoEl.current.pause();
-		setIsPlaying(false)
-	}
+		setIsPlaying(false);
+	};
 
-	const seekTime = event => {
+	const seekTime = (event) => {
 		if (isPlaying) {
-		  let rect = progressBarEl.current.getBoundingClientRect()
-		  const percent = (event.clientX - rect.left) / rect.width
-		  videoEl.current.currentTime = percent * length
+			let rect = progressBarEl.current.getBoundingClientRect();
+			const percent = (event.clientX - rect.left) / rect.width;
+			videoEl.current.currentTime = percent * length;
 		}
-	  }
+	};
 
 	const updateProgressBar = () => {
 		let vid = videoEl.current;
-		
+
 		setCurrentTime(vid.currentTime);
 		setLength(vid.duration);
 	};
 	return (
 		<VideoWrapper>
-			<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
-			<PlayButton show={isPlaying} onClick={() => pause()}> PAUSE</PlayButton>
+			<IconWrapper>
+				<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
+				<Icon show={isPlaying} onClick={() => pause()} src={PauseImage} />
+			</IconWrapper>
+
 			<Video
 				ref={videoEl}
 				onTimeUpdate={() => updateProgressBar()}
@@ -139,8 +148,13 @@ const VideoPlayer = (props) => {
 				src={props.url}
 				type="video/mp4"
 			/>
-			<ProgressBarWrapper show={isPlaying} >
-				<ProgressBar ref={progressBarEl} onClick={(event) => seekTime(event)} value={currentTime} max={length} />
+			<ProgressBarWrapper show={isPlaying}>
+				<ProgressBar
+					ref={progressBarEl}
+					onClick={(event) => seekTime(event)}
+					value={currentTime}
+					max={length}
+				/>
 			</ProgressBarWrapper>
 		</VideoWrapper>
 	);
