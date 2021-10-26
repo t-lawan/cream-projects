@@ -15,6 +15,8 @@ const ProjectDetailText = styled.p`
 	padding-right: 1rem;
 	white-space: nowrap;
 	font-size: 1.25rem;
+	font-family: "VT323";
+	margin-bottom: 0.25rem;
 
 
 	@media screen and (max-width: ${size.tablet}) {
@@ -25,6 +27,7 @@ const ProjectDetailText = styled.p`
 	}
 `;
 const Description = styled.div`
+padding-top: 1rem;
 	> p {
 		/* font-size: 2.25rem; */
 	}
@@ -94,7 +97,7 @@ const ProjectPageSection = (props) => {
 					</React.Fragment>
 				))}
 				</ProjectDetailsGrid>
-
+				
 				<Description>
 				{documentToReactComponents(JSON.parse(project.description), richTextOptions)}
 				</Description>
@@ -108,8 +111,10 @@ const ProjectPageSection = (props) => {
 					))}
 				</ContentSectionsWrapper>
 			) : null}
+			<StandardPadding>
+				<ProjectsLink to={PageMap.PROJECTS.slug}> {`⟵ Return to projects`}</ProjectsLink>
+			</StandardPadding>
 			
-			<ProjectsLink to={PageMap.PROJECTS.slug}> {`<- Return to projects`}</ProjectsLink>
 
 		</ProjectWrapper>
 	);
