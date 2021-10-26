@@ -32,7 +32,6 @@ const BackgroundVideo = () => {
   );
   
 	let meta = Convert.toMetaModel(contentfulMeta);
-	console.log('META', meta);
 
 
   return (

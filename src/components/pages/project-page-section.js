@@ -57,7 +57,6 @@ const Title = styled.h1`color: white;`;
 
 const ProjectPageSection = (props) => {
 	let project = props.project;
-	console.log('x',project);
 	let renderTextArr = [
 		{
 			key: 'Project',
