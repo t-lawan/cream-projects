@@ -2,12 +2,24 @@ import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Colour } from '../../styles/index.styles';
+import PlayImage from '../../assets/images/play.png'
+
 
 const VideoWrapper = styled.div`position: relative;`;
 const Video = styled.video`
 	z-index: 10;
 
 `;
+
+const Icon =  styled.img`
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	color: red;
+	text-align: center;
+	display: ${props => props.show ? 'block' : 'none'};
+	z-index: 50;
+`
 
 const PlayButton = styled.p`
 	position: absolute;
@@ -115,7 +127,7 @@ const VideoPlayer = (props) => {
 	};
 	return (
 		<VideoWrapper>
-			<PlayButton show={!isPlaying} onClick={() => play()}> PLAY</PlayButton>
+			<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
 			<PlayButton show={isPlaying} onClick={() => pause()}> PAUSE</PlayButton>
 			<Video
 				ref={videoEl}
