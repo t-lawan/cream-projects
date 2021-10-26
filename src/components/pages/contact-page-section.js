@@ -19,7 +19,10 @@ const ContactPageGrid = styled.div`
 const Column = styled.div``;
 
 const ContactText = styled.div`
+
 	> p,a {
+		font-family: "VT323";
+
 		font-size: 1.25rem;
 	}
 `;

@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components"
 import LifeEFRegularWoff from '../fonts/LifeEF-Regular.woff'
 import LifeEFRegularWoff2 from '../fonts/LifeEF-Regular.woff2'
+import VT323 from '../fonts/VT323-Regular.ttf'
 
 export const size = {
     mobileS: "320px",
@@ -23,14 +24,18 @@ export const StandardPadding = styled.div`
   padding: 1rem;
 `
 
-
-
 export const GlobalStyle = createGlobalStyle`
 
 
 @font-face {
   font-family: "LifeEFRegular";
   src: url(${LifeEFRegularWoff2}) format('woff2'), url(${LifeEFRegularWoff}) format('woff');
+  font-display: block;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url(${VT323}) format('truetype');
   font-display: block;
 }
 

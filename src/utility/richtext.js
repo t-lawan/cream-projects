@@ -8,14 +8,12 @@ const PARAGRAPH = styled.p`
 `
 
 const EXTERNALLINK = styled.a`
-  margin-bottom: 1rem;
-  text-decoration: underline;
 `
 export const richTextOptions = {
     renderMark: {
       [MARKS.BOLD]: text => <strong>{text}</strong>
     },
-    // renderNode: {
-    //   [INLINES.HYPERLINK]: (node, children) => <EXTERNALLINK href={node.data.uri} target="__blank">{children}</EXTERNALLINK>
-    // },
+    renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => <EXTERNALLINK href={node.data.uri} target="__blank">{children}</EXTERNALLINK>
+    },
   };
