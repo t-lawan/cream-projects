@@ -25,7 +25,6 @@ const Contact = () => {
 	);
 
 	let page = Convert.toPageModel(contentfulPage);
-	console.log('page', page);
 
 	return (
 		<Layout displayBelow={true}>

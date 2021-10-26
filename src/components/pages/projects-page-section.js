@@ -88,7 +88,6 @@ const ProjectsPageSection = () => {
 	);
 
 	let projectsArray = Convert.toModelArray(allContentfulProject, Convert.toProjectModel);
-	console.log('PRR', projectsArray);
 	return (
 		<ProjectsWrapper>
 			{projectsArray.map((project, index) => (

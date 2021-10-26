@@ -17,7 +17,6 @@ const MainWrapper = styled.main`
 `
 
 const Layout = props => {
-  console.log('props', props)
     return (
       <LayoutWrapper>
         <GlobalStyle />

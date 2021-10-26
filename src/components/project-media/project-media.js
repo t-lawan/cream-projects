@@ -26,9 +26,7 @@ const ProjectMedia = (props) => {
     let image;
     if(media.type == "IMAGE"){
         image = getImage(media.image.gatsbyImageData);
-    }
-
-    console.log('MEDIA', media)
+    
 
     return (
         <ProjectMediaWrapper>
