@@ -102,11 +102,11 @@ const NavbarImageItem = styled.img`
 	mix-blend-mode: lighten;
 	width: 100%;
 	/* margin-top: -12%; */
-	fill: pink !important;
+	/* fill: pink !important; */
 
 	overflow: hidden;
 	.svg {
-		fill: pink !important;
+		/* fill: pink !important; */
 	}
 `;
 const Navbar = (props) => {

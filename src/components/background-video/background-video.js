@@ -1,10 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import BGVideo from '../../assets/videos/video.mp4'
+import BGVideo from '../../assets/videos/video.mp4';
 import { Convert } from '../../utility/convert';
-const VideoWrapper = styled.div``
-const Video = styled.video``
+const VideoWrapper = styled.div`
+	width: 100vw;
+	height: 100vh;
+    overflow: hidden;
+`;
+const Video = styled.video``;
 
 const BackgroundVideo = () => {
 	const { contentfulMeta } = useStaticQuery(
@@ -29,22 +33,15 @@ const BackgroundVideo = () => {
 				}
 			}
 		`
-  );
-  
+	);
+
 	let meta = Convert.toMetaModel(contentfulMeta);
 
+	return (
+		<VideoWrapper>
+			<Video id="splash" loop autoPlay playsInline muted src={meta.landingPageUrl} type="video/mp4" />
+		</VideoWrapper>
+	);
+};
 
-  return (
-    <Video
-        id="splash"
-        loop
-        autoPlay
-        playsInline
-        muted
-        src={meta.landingPageUrl}
-        type="video/mp4"
-      ></Video>
-  )
-}
-
-export default BackgroundVideo
+export default BackgroundVideo;
