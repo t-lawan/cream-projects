@@ -5,7 +5,12 @@ import { Colour, Layers } from '../../styles/index.styles';
 import PlayImage from '../../assets/images/play.png';
 import PauseImage from '../../assets/images/pause.png';
 
-const VideoWrapper = styled.div`position: relative;`;
+const VideoWrapper = styled.div`
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+`;
 const Video = styled.video`z-index: ${Layers.BACKGROUND_VIDEO};`;
 
 const IconWrapper = styled.div`
@@ -35,9 +40,7 @@ const Icon = styled.img`
 	filter: invert(1);
 `;
 
-const PlayButton = styled.p`
-	display: ${(props) => (props.show ? 'block' : 'none')};
-`;
+const PlayButton = styled.p`display: ${(props) => (props.show ? 'block' : 'none')};`;
 
 const ProgressBarWrapper = styled.div`
 	position: absolute;

@@ -11,7 +11,7 @@ import { PageMap } from '../../utility/config';
 const ProjectsWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-
+	padding: 1rem;
 	@media screen and (min-width: ${size.laptopL}) {
 		grid-template-columns: repeat(6, 1fr);
 	}

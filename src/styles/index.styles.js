@@ -15,7 +15,7 @@ export const size = {
 
 export const Layers = {
     BACKGROUND_VIDEO: 10,
-    NAVBAR: 50,
+    NAVBAR: 60,
     VIDEO_PLAYER_ICONS: 50 
   }
 

@@ -13,17 +13,21 @@ const ContactPageGrid = styled.div`
 
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;
+		grid-row-gap: 2rem;
 	}
 `;
 
 const Column = styled.div``;
 
 const ContactText = styled.div`
-
-	> p,a {
+	> p,
+	a {
 		font-family: "VT323";
 
 		font-size: 1.25rem;
+		@media screen and (max-width: ${size.tablet}) {
+			margin: 0;
+		}
 	}
 `;
 const ContactPageSection = (props) => {
