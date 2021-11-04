@@ -49,8 +49,12 @@ const MediaWrapper = styled.div`
 const ProjectDetailsGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr 5fr;
 	grid-column-gap: 1rem;
-	width: 40%;
+	width: 100%;
+	/* @media screen and (max-width: ${size.tablet}) {
+		width: 100%;
+	} */
 `;
 
 const ProjectThumbnail = styled(GatsbyImage)`
