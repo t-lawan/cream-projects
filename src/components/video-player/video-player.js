@@ -11,7 +11,10 @@ const VideoWrapper = styled.div`
 	height: 100vh;
 	overflow: hidden;
 `;
-const Video = styled.video`z-index: ${Layers.BACKGROUND_VIDEO};`;
+const Video = styled.video`
+z-index: ${Layers.BACKGROUND_VIDEO};
+opacity: 0.8;
+`;
 
 const IconWrapper = styled.div`
 	z-index: ${Layers.VIDEO_PLAYER_ICONS};
