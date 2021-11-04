@@ -24,6 +24,7 @@ const NavbarWrapper = styled.header`
 	z-index: ${Layers.NAVBAR};
 	@media screen and (max-width: ${size.tablet}) {
 		/* display: none; */
+		position: fixed;
 		padding: 0rem;
 	}
 `;
