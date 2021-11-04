@@ -27,6 +27,7 @@ const ContactText = styled.div`
 		font-size: 1.25rem;
 		@media screen and (max-width: ${size.tablet}) {
 			margin: 0;
+			font-size: 1rem;
 		}
 	}
 `;
