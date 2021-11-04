@@ -10,7 +10,7 @@ const AboutPageSectionWrapper = styled.div``;
 const AboutPageGrid = styled.div`
 	display: grid;
 	grid-template-columns: 4fr 2fr;
-	grid-column-gap: 1rem;
+	grid-column-gap: 2rem;
 
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;
@@ -21,7 +21,12 @@ const ListSection = styled.div`
 	margin-bottom: 2rem;
 `
 const Title = styled.h4`
+	font-size: 1.25rem;
+	font-family: 'VT323';
 	margin-bottom: 1rem;
+	@media screen and (max-width: ${size.tablet}) {
+		font-size: 1rem;
+	}
 `
 
 const ListItem = styled.p`
