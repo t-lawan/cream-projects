@@ -24,7 +24,7 @@ const NavbarWrapper = styled.header`
 	z-index: ${Layers.NAVBAR};
 	@media screen and (max-width: ${size.tablet}) {
 		/* display: none; */
-		position: fixed;
+		/* position: fixed; */
 		padding: 0rem;
 	}
 `;
@@ -66,7 +66,7 @@ const NavbarMobileWrapper = styled.div`
 		justify-content: flex-end;
 		align-items: center;
 		width: 100%;
-		padding: 1rem;
+		padding: 0.5rem;
 	}
 `;
 const NavbarMobileOverlayWrapper = styled.div`
