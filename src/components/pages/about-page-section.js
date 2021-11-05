@@ -17,6 +17,7 @@ const AboutPageGrid = styled.div`
 	}
 `;
 
+
 const ListSection = styled.div`
 	margin-bottom: 2rem;
 `
@@ -28,7 +29,11 @@ const Title = styled.h4`
 		font-size: 1rem;
 	}
 `
-
+const PressTextWrapper = styled.div`
+	p, a {
+		margin: 0;
+	}
+`
 const ListItem = styled.p`
 	/* padding: 0; */
 	margin: 0;
@@ -75,6 +80,11 @@ const AboutPageSection = (props) => {
 
 						<ListSection>
 							<Title>Press </Title>
+							<PressTextWrapper>
+								{documentToReactComponents(JSON.parse(page.pressText), richTextOptions)}
+
+							</PressTextWrapper>
+
 						</ListSection>
 					</Column>
 				</AboutPageGrid>

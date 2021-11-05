@@ -31,6 +31,13 @@ export class Convert {
 	};
 
 	static toPageModel = (contentfulModel) => {
+		let projectList = [];
+
+		if(contentfulModel.projectList){
+			contentfulModel.projectList.forEach((project) => {
+				projectList.push(Convert.toProjectModel(project))
+			})
+		}
 		return new PageModel(
 			contentfulModel.contentful_id,
 			contentfulModel.title,
@@ -39,6 +46,8 @@ export class Convert {
 			contentfulModel.staff,
 			contentfulModel.selectedClientsAndCollaborators,
 			contentfulModel.contactText ? contentfulModel.contactText.raw : '',	
+			contentfulModel.pressText ? contentfulModel.pressText.raw : '',	
+			projectList,
 		)
 	}
 

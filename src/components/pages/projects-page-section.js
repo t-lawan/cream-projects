@@ -35,59 +35,8 @@ const ProjectLink = styled(Link)`
 `;
 const Title = styled.h1`color: white;`;
 
-const ProjectsPageSection = () => {
-	const { allContentfulProject } = useStaticQuery(
-		graphql`
-			query {
-				allContentfulProject {
-					edges {
-						node {
-							clientName
-							contentful_id
-							description {
-								raw
-							}
-							detail {
-								detail
-							}
-							seoDescription {
-								seoDescription
-							}
-							seoTitle
-							title
-							year
-							thumbnailImage {
-								gatsbyImageData(placeholder: BLURRED, quality: 100)
-							}
-							contentSections {
-								contentful_id
-								media {
-									image {
-										gatsbyImageData(quality: 100, resizingBehavior: FILL)
-									}
-									type
-									title
-									video {
-										file {
-											url
-										}
-									}
-								}
-							}
-							slug
-							mainVideo {
-								file {
-									url
-								}
-							}
-						}
-					}
-				}
-			}
-		`
-	);
-
-	let projectsArray = Convert.toModelArray(allContentfulProject, Convert.toProjectModel);
+const ProjectsPageSection = (props) => {
+	let projectsArray = props.projects;
 	return (
 		<ProjectsWrapper>
 			{projectsArray.map((project, index) => (

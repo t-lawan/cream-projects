@@ -17,7 +17,7 @@ export class ProjectModel {
     contentSections;
 
 
-    constructor(id, title, description, slug, detail, clientName, year, thumbnailImage, mainVideo, contentSections, seoTitle, seoDescription) {
+    constructor(id, title, description, slug, detail, clientName, year, thumbnailImage, mainVideo, contentSections,seoTitle, seoDescription) {
         this.title = title;
         this.id = id;
         this.description = description;

@@ -19,6 +19,49 @@ const Contact = () => {
 					contactText {
 						raw
 					}
+					pressText {
+						raw
+					}
+					projectList {
+						clientName
+						contentful_id
+						description {
+							raw
+						}
+						detail {
+							detail
+						}
+						seoDescription {
+							seoDescription
+						}
+						seoTitle
+						title
+						year
+						thumbnailImage {
+							gatsbyImageData(placeholder: BLURRED, quality: 100)
+						}
+						contentSections {
+							contentful_id
+							media {
+								image {
+									gatsbyImageData(quality: 100, resizingBehavior: FILL)
+								}
+								type
+								title
+								video {
+									file {
+										url
+									}
+								}
+							}
+						}
+						slug
+						mainVideo {
+							file {
+								url
+							}
+						}
+					}
 				}
 			}
 		`
