@@ -14,6 +14,7 @@ const VideoWrapper = styled.div`
 const Video = styled.video`
 z-index: ${Layers.BACKGROUND_VIDEO};
 opacity: 0.8;
+width: 100%;
 `;
 
 const IconWrapper = styled.div`
