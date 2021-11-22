@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from "react-redux"
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { HamburgerBoring } from 'react-animated-burgers';
@@ -22,6 +23,9 @@ const NavbarWrapper = styled.header`
 	width: 100vw;
 	padding: 1rem;
 	z-index: ${Layers.NAVBAR};
+	opacity: ${props => props.show ? 1.0 : 0.0};
+    transition: opacity 0.5s;
+
 	@media screen and (max-width: ${size.tablet}) {
 		/* display: none; */
 		/* position: fixed; */
@@ -147,8 +151,9 @@ const Navbar = (props) => {
 		return response;
 	};
 
+
 	return (
-		<NavbarWrapper displayBelow={props.displayBelow}>
+		<NavbarWrapper show={props.showNavbar} displayBelow={props.displayBelow}>
 			<NavbarDesktopWrapper>
 				<NavLink to={PageMap.HOME.slug}>
 					<NavbarImageItem
@@ -220,4 +225,13 @@ const Navbar = (props) => {
 	);
 };
 
-export default Navbar;
+const mapStateToProps = state => {
+    return {
+      showNavbar: state.showNavbar,
+    }
+  }
+
+  export default connect(
+    mapStateToProps,
+    null
+  )(Navbar);

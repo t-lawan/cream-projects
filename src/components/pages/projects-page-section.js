@@ -36,19 +36,19 @@ const ProjectLink = styled(Link)`
 const Title = styled.h1`color: white;`;
 
 const ProjectsPageSection = (props) => {
-	let projectsArray = props.projects;
+	let projectThumbnails = props.projects;
 	return (
 		<ProjectsWrapper>
-			{projectsArray.map((project, index) => (
+			{projectThumbnails.map((thumbnail, index) => (
 				<React.Fragment key={index}>
-					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
-						<ProjectTile project={project} />
+					<ProjectLink to={`${PageMap.PROJECT.slug}/${thumbnail.project.slug}`}>
+						<ProjectTile image={thumbnail.image} project={thumbnail.project} />
 					</ProjectLink>
-					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
-						<ProjectTile project={project} />
+					<ProjectLink to={`${PageMap.PROJECT.slug}/${thumbnail.project.slug}`}>
+						<ProjectTile image={thumbnail.image} project={thumbnail.project} />
 					</ProjectLink>
-					<ProjectLink to={`${PageMap.PROJECT.slug}/${project.slug}`}>
-						<ProjectTile project={project} />
+					<ProjectLink to={`${PageMap.PROJECT.slug}/${thumbnail.project.slug}`}>
+						<ProjectTile image={thumbnail.image} project={thumbnail.project} />
 					</ProjectLink>
 				</React.Fragment>
 			))}

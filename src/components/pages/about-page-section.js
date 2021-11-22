@@ -29,7 +29,7 @@ const Title = styled.h4`
 		font-size: 1rem;
 	}
 `
-const PressTextWrapper = styled.div`
+const TextWrapper = styled.div`
 	p, a {
 		margin: 0;
 	}
@@ -58,32 +58,27 @@ const AboutPageSection = (props) => {
 					<Column>
 						<ListSection>
 							<Title>Staff </Title>
-							{page.staff ? (
-								<>
-									{page.staff.map((name,index) => (
-										<ListItem key={index}> {name}</ListItem>
-									))}
-								</>
-							) : null}
+							<TextWrapper>
+								{documentToReactComponents(JSON.parse(page.staff), richTextOptions)}
+							</TextWrapper>
+
 						</ListSection>
 
 						<ListSection>
 							<Title>Selected clients and collaborators </Title>
-							{page.selectedClientsAndCollaborators ? (
-								<>
-									{page.selectedClientsAndCollaborators.map((name,index) => (
-										<ListItem key={index}> {name}</ListItem>
-									))}
-								</>
-							) : null}
+							<TextWrapper>
+								{documentToReactComponents(JSON.parse(page.selectedClientsAndCollaborators), richTextOptions)}
+							</TextWrapper>
+
+
 						</ListSection>
 
 						<ListSection>
 							<Title>Press </Title>
-							<PressTextWrapper>
+							<TextWrapper>
 								{documentToReactComponents(JSON.parse(page.pressText), richTextOptions)}
 
-							</PressTextWrapper>
+							</TextWrapper>
 
 						</ListSection>
 					</Column>

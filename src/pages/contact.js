@@ -12,8 +12,12 @@ const Contact = () => {
 					firstColumnText {
 						raw
 					}
-					staff
-					selectedClientsAndCollaborators
+					staff {
+						raw
+					}
+					selectedClientsAndCollaborators {
+						raw
+					}
 					seoTitle
 					title
 					contactText {

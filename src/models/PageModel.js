@@ -7,9 +7,9 @@ export class PageModel {
     selectedClientsAndCollaborators;
     contactText;
     pressText;
-    projectList;
+    projectThumbnailList;
 
-    constructor(id, title, seoTitle, firstColumnText, staff, selectedClientsAndCollaborators, contactText, pressText, projectList) {
+    constructor(id, title, seoTitle, firstColumnText, staff, selectedClientsAndCollaborators, contactText, pressText, projectThumbnailList) {
         this.id = id;
         this.title = title;
         this.seoTitle = seoTitle;
@@ -18,6 +18,6 @@ export class PageModel {
         this.selectedClientsAndCollaborators = selectedClientsAndCollaborators;
         this.contactText = contactText;
         this.pressText = pressText;
-        this.projectList = projectList;
+        this.projectThumbnailList = projectThumbnailList;
     }
 }

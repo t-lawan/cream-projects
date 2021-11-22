@@ -4,7 +4,9 @@ import AboutPageSection from '../components/pages/about-page-section';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Convert } from '../utility/convert';
 
-const About = () => {
+const About = (props) => {
+	console.log('PROPS', props)
+
 	const { contentfulPage } = useStaticQuery(
 		graphql`
 			query {
@@ -13,8 +15,12 @@ const About = () => {
 					firstColumnText {
 						raw
 					}
-					staff
-					selectedClientsAndCollaborators
+					staff {
+						raw
+					}
+					selectedClientsAndCollaborators {
+						raw
+					}
 					seoTitle
 					title
 					contactText {

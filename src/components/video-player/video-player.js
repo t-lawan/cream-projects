@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Colour, Layers } from '../../styles/index.styles';
 import PlayImage from '../../assets/images/play.png';
 import PauseImage from '../../assets/images/pause.png';
+import { connect } from "react-redux"
+import { showNavbar, hideNavbar } from '../../store/actions';
 
 const VideoWrapper = styled.div`
 	position: relative;
@@ -19,7 +21,6 @@ opacity: 0.8;
 
 const IconWrapper = styled.div`
 	z-index: ${Layers.VIDEO_PLAYER_ICONS};
-
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -117,11 +118,14 @@ const VideoPlayer = (props) => {
 	const play = () => {
 		videoEl.current.play();
 		setIsPlaying(true);
+		props.hideNavbar();
 	};
 
 	const pause = () => {
 		videoEl.current.pause();
 		setIsPlaying(false);
+		props.showNavbar();
+
 	};
 
 	const seekTime = (event) => {
@@ -132,8 +136,19 @@ const VideoPlayer = (props) => {
 		}
 	};
 
+	const isInViewPort = (element) => {
+		const rect = element.getBoundingClientRect();
+		return (
+			Math.abs(rect.y) <= rect.height/2
+			
+		);
+	}
+
 	const updateProgressBar = () => {
 		let vid = videoEl.current;
+		if(!isInViewPort(vid)){
+			pause();
+		}
 
 		setCurrentTime(vid.currentTime);
 		setLength(vid.duration);
@@ -171,4 +186,13 @@ VideoPlayer.propTypes = {
 	url: PropTypes.string.isRequired
 };
 
-export default VideoPlayer;
+const mapDispatchToProps = dispatch => {
+	return {
+		showNavbar: () => dispatch(showNavbar()),
+		hideNavbar: () => dispatch(hideNavbar()),
+	}
+  }
+export default connect(
+    null,
+    mapDispatchToProps
+  )(VideoPlayer);

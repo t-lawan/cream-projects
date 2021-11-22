@@ -1,6 +1,7 @@
 import { ProjectModel } from '../models/ProjectModel';
 import { PageModel } from '../models/PageModel';
 import { MetaModel } from '../models/MetaModel';
+import { ProjectThumbnailModel } from '../models/ProjectThumbnail';
 
 export class Convert {
 
@@ -30,12 +31,24 @@ export class Convert {
 		);
 	};
 
-	static toPageModel = (contentfulModel) => {
-		let projectList = [];
+	static toProjectThumbnail = (contentfulModel) => {
 
-		if(contentfulModel.projectList){
-			contentfulModel.projectList.forEach((project) => {
-				projectList.push(Convert.toProjectModel(project))
+		let project = Convert.toProjectModel(contentfulModel.project)
+		return new ProjectThumbnailModel(
+			contentfulModel.contentful_id,
+			contentfulModel.title,
+			contentfulModel.image,
+			project
+		)
+	}
+
+	static toPageModel = (contentfulModel) => {
+		let projectThumbnailList = [];
+
+
+		if(contentfulModel.projectThumbnails){
+			contentfulModel.projectThumbnails.forEach((thumbnail) => {
+				projectThumbnailList.push(Convert.toProjectThumbnail(thumbnail))
 			})
 		}
 		return new PageModel(
@@ -43,11 +56,11 @@ export class Convert {
 			contentfulModel.title,
 			contentfulModel.seoTitle,
 			contentfulModel.firstColumnText ? contentfulModel.firstColumnText.raw : '',
-			contentfulModel.staff,
-			contentfulModel.selectedClientsAndCollaborators,
+			contentfulModel.staff ? contentfulModel.staff.raw : '',
+			contentfulModel.selectedClientsAndCollaborators ? contentfulModel.selectedClientsAndCollaborators.raw : '',
 			contentfulModel.contactText ? contentfulModel.contactText.raw : '',	
 			contentfulModel.pressText ? contentfulModel.pressText.raw : '',	
-			projectList,
+			projectThumbnailList
 		)
 	}
 

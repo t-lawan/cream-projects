@@ -10,7 +10,7 @@ export const size = {
     tablet: "768px",
     laptop: "1024px",
     laptopL: "1440px",
-    desktop: "1500px"
+    desktop: "2000px"
   }
 
 export const Layers = {

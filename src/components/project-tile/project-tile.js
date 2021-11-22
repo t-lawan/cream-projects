@@ -40,7 +40,7 @@ const ProjectTitle = styled.p`
  
 const ProjectTile = (props) => {
     let project = props.project
-    let image = getImage(project.thumbnailImage.gatsbyImageData);
+    let image = getImage(props.image.gatsbyImageData);
 
     return (
         <ProjectTitleWrapper>
