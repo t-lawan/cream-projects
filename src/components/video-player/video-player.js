@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { Colour, Layers } from '../../styles/index.styles';
+import { Colour, Layers, size } from '../../styles/index.styles';
 import PlayImage from '../../assets/images/play.png';
 import PauseImage from '../../assets/images/pause.png';
-import { connect } from "react-redux"
+import { connect } from 'react-redux';
 import { showNavbar, hideNavbar } from '../../store/actions';
 
 const VideoWrapper = styled.div`
@@ -17,12 +17,14 @@ const VideoWrapper = styled.div`
 	align-items: center;
 `;
 const Video = styled.video`
-z-index: ${Layers.BACKGROUND_VIDEO};
-opacity: 0.8;
+	z-index: ${Layers.BACKGROUND_VIDEO};
+	opacity: 0.8;
 
-width: 100%;
-height: auto;
-
+	width: 100%;
+	@media screen and (max-width: ${size.tablet}) {
+		height: 100%;
+		width: auto;
+	}
 `;
 
 const IconWrapper = styled.div`
@@ -49,6 +51,10 @@ const Icon = styled.img`
 	width: 7.5%;
 	display: ${(props) => (props.show ? 'block' : 'none')};
 	filter: invert(1);
+	@media screen and (max-width: ${size.tablet}) {
+		width: 15%;
+	
+	}
 `;
 
 const PlayButton = styled.p`display: ${(props) => (props.show ? 'block' : 'none')};`;
@@ -131,7 +137,6 @@ const VideoPlayer = (props) => {
 		videoEl.current.pause();
 		setIsPlaying(false);
 		props.showNavbar();
-
 	};
 
 	const seekTime = (event) => {
@@ -144,15 +149,12 @@ const VideoPlayer = (props) => {
 
 	const isInViewPort = (element) => {
 		const rect = element.getBoundingClientRect();
-		return (
-			Math.abs(rect.y) <= rect.height/2
-			
-		);
-	}
+		return Math.abs(rect.y) <= rect.height / 2;
+	};
 
 	const updateProgressBar = () => {
 		let vid = videoEl.current;
-		if(!isInViewPort(vid)){
+		if (!isInViewPort(vid)) {
 			pause();
 		}
 
@@ -192,13 +194,10 @@ VideoPlayer.propTypes = {
 	url: PropTypes.string.isRequired
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
 		showNavbar: () => dispatch(showNavbar()),
-		hideNavbar: () => dispatch(hideNavbar()),
-	}
-  }
-export default connect(
-    null,
-    mapDispatchToProps
-  )(VideoPlayer);
+		hideNavbar: () => dispatch(hideNavbar())
+	};
+};
+export default connect(null, mapDispatchToProps)(VideoPlayer);
