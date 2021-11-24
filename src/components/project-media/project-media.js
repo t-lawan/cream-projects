@@ -14,12 +14,13 @@ const Image = styled(GatsbyImage)`
     /* display: block; */
     width: 100%;
     object-fit: fill;
-    /* height: 100%; */
+    height: 100%;
 `;
 
 const Video = styled.video`
     width: 100%;
     height: 100%;
+    
 `
 const ProjectMedia = (props) => {
     let media = props.media
