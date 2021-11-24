@@ -18,11 +18,7 @@ const SEO = ({ title }) => {
 							url
 						}
 					}
-					landingPageVideo {
-						file {
-							url
-						}
-					}
+					landingPageUrl
 				}
 			}
 		`
