@@ -56,6 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
 											url
 										}
 									}
+									videoUrl
 								}
 							}
 							slug
@@ -64,6 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
 									url
 								}
 							}
+							mainVideoUrl
 						}
 					}
 				}
