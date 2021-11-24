@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Convert } from '../utility/convert';
 
 const About = (props) => {
-	console.log('PROPS', props)
 
 	const { contentfulPage } = useStaticQuery(
 		graphql`
