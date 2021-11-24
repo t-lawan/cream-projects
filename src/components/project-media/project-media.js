@@ -22,7 +22,7 @@ const Video = styled.video`
 `
 const ProjectMedia = (props) => {
     let media = props.media
-
+    console.log('m', media)
     let image;
     if(media.type == "IMAGE"){
         image = getImage(media.image.gatsbyImageData);
@@ -32,7 +32,7 @@ const ProjectMedia = (props) => {
         <ProjectMediaWrapper>
             {/* <p> Hey </p> */}
             {media.type == "IMAGE" ? <Image image={image} alt={"hey"} /> : null}
-            {media.type == "VIDEO" ? <Video src={media.video.file.url} autoPlay loop muted /> : null}
+            {media.type == "VIDEO" ? <Video src={media.videoUrl} autoPlay loop muted /> : null}
         </ProjectMediaWrapper>
     )
 }
