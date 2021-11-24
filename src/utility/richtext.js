@@ -1,11 +1,7 @@
 import React from "react"
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { MARKS, INLINES } from '@contentful/rich-text-types';
 import styled from 'styled-components';
-const PARAGRAPH = styled.p`
-  margin-bottom: 1.5rem;
-  line-height: 1.2rem;
-  color: red;
-`
+
 
 const EXTERNALLINK = styled.a`
 `
