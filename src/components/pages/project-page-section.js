@@ -85,7 +85,7 @@ const ProjectPageSection = (props) => {
 
 	return (
 		<ProjectWrapper>
-			<VideoPlayer url={project.mainVideo.file.url} />
+			<VideoPlayer url={project.mainVideo} />
 			<StandardPadding>
 			<ProjectDetailsGrid>
 
