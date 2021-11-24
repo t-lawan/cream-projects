@@ -11,7 +11,7 @@ export class Convert {
 			contentfulModel.seoTitle,
 			contentfulModel.seoDescription ? contentfulModel.seoDescription.seoDescription : '',
 			contentfulModel.seoImage && contentfulModel.seoImage.file ? contentfulModel.seoImage.file.url : null,
-			contentfulModel.landingPageVideo && contentfulModel.landingPageVideo.file ? contentfulModel.landingPageVideo.file.url : null,
+			contentfulModel.landingPageUrl,
 		)
 	}
 	static toProjectModel = (contentfulModel) => {
@@ -24,7 +24,7 @@ export class Convert {
 			contentfulModel.clientName,
 			contentfulModel.year,
 			contentfulModel.thumbnailImage,
-			contentfulModel.mainVideo,
+			contentfulModel.mainVideoUrl,
 			contentfulModel.contentSections,
 			contentfulModel.seoTitle,
 			contentfulModel.seoDescription ? contentfulModel.seoDescription.seoDescription : ''
