@@ -22,7 +22,6 @@ const Video = styled.video`
 `
 const ProjectMedia = (props) => {
     let media = props.media
-    console.log('m', media)
     let image;
     if(media.type == "IMAGE"){
         image = getImage(media.image.gatsbyImageData);
