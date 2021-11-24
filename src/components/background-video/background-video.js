@@ -6,7 +6,7 @@ import { Convert } from '../../utility/convert';
 const VideoWrapper = styled.div`
 	width: 100vw;
 	height: 100vh;
-    overflow: hidden;
+	overflow: hidden;
 `;
 const Video = styled.video``;
 
@@ -25,11 +25,7 @@ const BackgroundVideo = () => {
 							url
 						}
 					}
-					landingPageVideo {
-						file {
-							url
-						}
-					}
+					landingPageUrl
 				}
 			}
 		`
