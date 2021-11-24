@@ -16,7 +16,6 @@ const MainWrapper = styled.main``;
 const Layout = (props) => {
 	useEffect(() => {
 		return globalHistory.listen((action) => {
-			console.log(action)
 			// if (!props.show_navbar) {
 				props.showNavbar();
 			// }
