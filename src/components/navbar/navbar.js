@@ -34,7 +34,8 @@ const NavbarWrapper = styled.header`
 `;
 
 const NavLink = styled(Link)`
-
+	padding-right: 0.5rem;
+	width: ${props => `${25/props.sizef}%`};
 `;
 
 export const Hamburger = styled(HamburgerBoring)`
@@ -48,14 +49,14 @@ export const Hamburger = styled(HamburgerBoring)`
 `;
 
 const NavbarDesktopWrapper = styled.div`
-	/* display: flex;
+	display: flex;
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-around;
-    align-items: baseline; */
-	display: grid;
+    align-items: baseline;
+	/* display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-column-gap: 2rem;
+	grid-column-gap: 2rem; */
 	align-items: center;
 	@media screen and (max-width: ${size.tablet}) {
 		display: none;
@@ -155,26 +156,26 @@ const Navbar = (props) => {
 	return (
 		<NavbarWrapper show={props.showNavbar} displayBelow={props.displayBelow}>
 			<NavbarDesktopWrapper>
-				<NavLink to={PageMap.HOME.slug}>
+				<NavLink to={PageMap.HOME.slug} sizef={1.08744281}>
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.HOME.id) ? CreamImg : CreamOutlineImg}
 						alt="nav-button"
 					/>
 				</NavLink>
-				<NavLink to={PageMap.PROJECTS.slug}>
+				<NavLink to={PageMap.PROJECTS.slug} sizef={1}>
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.PROJECTS.id) ? ProjectsImg : ProjectsOutlineImg}
 						alt="nav-button"
 					/>
 				</NavLink>
-				<NavLink to={PageMap.ABOUT.slug}>
+				<NavLink to={PageMap.ABOUT.slug} sizef={1.2227775}>
 					{/* <AboutImg fill='red' /> */}
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.ABOUT.id) ? AboutImg : AboutOutlineImg}
 						alt="nav-button"
 					/>
 				</NavLink>
-				<NavLink to={PageMap.CONTACT.slug}>
+				<NavLink to={PageMap.CONTACT.slug} sizef={1}>
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.CONTACT.id) ? ContactImg : ContactOutlineImg}
 						alt="nav-button"
