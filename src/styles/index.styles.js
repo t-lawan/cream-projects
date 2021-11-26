@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components"
 import LifeEFRegularWoff from '../fonts/LifeEF-Regular.woff'
 import LifeEFRegularWoff2 from '../fonts/LifeEF-Regular.woff2'
 import VT323 from '../fonts/VT323-Regular.ttf'
+import SpoonPng from '../assets/images/spoon.png'
 
 export const size = {
     mobileS: "320px",
@@ -48,6 +49,7 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
 box-sizing: border-box;
+cursor: url(${SpoonPng}), auto ;
 }
 html,
 body {
