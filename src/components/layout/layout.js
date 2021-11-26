@@ -16,16 +16,14 @@ const MainWrapper = styled.main``;
 const Layout = (props) => {
 	useEffect(() => {
 		return globalHistory.listen((action) => {
-			// if (!props.show_navbar) {
 				props.showNavbar();
-			// }
 		})
 	  }, [])
 
 	return (
 		<LayoutWrapper>
 			<GlobalStyle />
-			<SEO />
+			<SEO title={props.seoTitle} />
 			<Navbar displayBelow={props.displayBelow} />
 			<MainWrapper>{props.children}</MainWrapper>
 		</LayoutWrapper>

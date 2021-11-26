@@ -76,7 +76,7 @@ const About = (props) => {
 	let page = Convert.toPageModel(contentfulPage);
 
 	return (
-		<Layout displayBelow={true}>
+		<Layout displayBelow={true} seoTitle={page.seoTitle}>
 			<AboutPageSection page={page} />
 		</Layout>
 	);

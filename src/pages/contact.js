@@ -74,7 +74,7 @@ const Contact = () => {
 	let page = Convert.toPageModel(contentfulPage);
 
 	return (
-		<Layout displayBelow={true}>
+		<Layout displayBelow={true} seoTitle={page.seoTitle}>
 			<ContactPageSection page={page} />
 		</Layout>
 	);

@@ -121,7 +121,7 @@ const ProjectsPage = () => {
 
 	let page = Convert.toPageModel(contentfulPage);
 	return (
-		<Layout displayBelow={true}>
+		<Layout displayBelow={true} seoTitle={page.seoTitle}>
 			<ProjectsPageSection projects={page.projectThumbnailList} />
 		</Layout>
 	);

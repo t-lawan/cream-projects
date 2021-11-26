@@ -122,6 +122,7 @@ const ProgressBar = styled.progress`
  */
 const VideoPlayer = (props) => {
 	const [ isPlaying, setIsPlaying ] = useState(false);
+	const [ isShowing, setIsShowing ] = useState(true);
 	const [ currentTime, setCurrentTime ] = useState(0);
 	const [ length, setLength ] = useState(0);
 	const videoEl = useRef(null);
@@ -131,6 +132,12 @@ const VideoPlayer = (props) => {
 		videoEl.current.play();
 		setIsPlaying(true);
 		props.hideNavbar();
+		if(isShowing){
+			setTimeout(() => {
+				setIsShowing(false);
+			}, 3000)
+		}
+
 	};
 
 	const pause = () => {
@@ -138,12 +145,20 @@ const VideoPlayer = (props) => {
 		setIsPlaying(false);
 		props.showNavbar();
 	};
+	
+	const mouseMove = () => {
+
+		if(!isShowing) {
+			setIsShowing(true);
+		}
+	}
 
 	const seekTime = (event) => {
 		if (isPlaying) {
 			let rect = progressBarEl.current.getBoundingClientRect();
 			const percent = (event.clientX - rect.left) / rect.width;
 			videoEl.current.currentTime = percent * length;
+
 		}
 	};
 
@@ -157,12 +172,19 @@ const VideoPlayer = (props) => {
 		if (!isInViewPort(vid)) {
 			pause();
 		}
+		if(isShowing) {
+			setTimeout(() => {
+				setIsShowing(false);
+			}, 5000)
 
+		}
 		setCurrentTime(vid.currentTime);
 		setLength(vid.duration);
 	};
 	return (
-		<VideoWrapper>
+		<VideoWrapper
+			onMouseMove={() => mouseMove()}
+		>
 			<IconWrapper>
 				<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
 				<Icon show={isPlaying} onClick={() => pause()} src={PauseImage} />
@@ -178,7 +200,7 @@ const VideoPlayer = (props) => {
 				src={props.url}
 				type="video/mp4"
 			/>
-			<ProgressBarWrapper show={isPlaying}>
+			<ProgressBarWrapper show={isPlaying && isShowing}>
 				<ProgressBar
 					ref={progressBarEl}
 					onClick={(event) => seekTime(event)}

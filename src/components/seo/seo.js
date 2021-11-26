@@ -29,7 +29,7 @@ const SEO = ({ title }) => {
 	return (
 		<Helmet>
 			<meta charset="UTF-8" />
-			<title>Cream Projects</title>
+			<title> {title ? `${title} | ${meta.seoTitle}` : `${meta.seoTitle}`}</title>
 			<meta data-react-helmet="true" property="description" content={meta.seoDescription} />
 			<meta data-react-helmet="true" property="og:type" content="website" />
 			<meta data-react-helmet="true" property="og:url" content="https://www.creamprojects.com/" />
