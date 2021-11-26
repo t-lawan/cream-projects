@@ -19,8 +19,9 @@ const VideoWrapper = styled.div`
 const Video = styled.video`
 	z-index: ${Layers.BACKGROUND_VIDEO};
 	opacity: 0.8;
-
 	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	@media screen and (max-width: ${size.tablet}) {
 		height: 100%;
 		width: auto;
@@ -53,7 +54,6 @@ const Icon = styled.img`
 	filter: invert(1);
 	@media screen and (max-width: ${size.tablet}) {
 		width: 15%;
-	
 	}
 `;
 
@@ -132,12 +132,11 @@ const VideoPlayer = (props) => {
 		videoEl.current.play();
 		setIsPlaying(true);
 		props.hideNavbar();
-		if(isShowing){
+		if (isShowing) {
 			setTimeout(() => {
 				setIsShowing(false);
-			}, 3000)
+			}, 3000);
 		}
-
 	};
 
 	const pause = () => {
@@ -145,20 +144,18 @@ const VideoPlayer = (props) => {
 		setIsPlaying(false);
 		props.showNavbar();
 	};
-	
-	const mouseMove = () => {
 
-		if(!isShowing) {
+	const mouseMove = () => {
+		if (!isShowing) {
 			setIsShowing(true);
 		}
-	}
+	};
 
 	const seekTime = (event) => {
 		if (isPlaying) {
 			let rect = progressBarEl.current.getBoundingClientRect();
 			const percent = (event.clientX - rect.left) / rect.width;
 			videoEl.current.currentTime = percent * length;
-
 		}
 	};
 
@@ -172,19 +169,16 @@ const VideoPlayer = (props) => {
 		if (!isInViewPort(vid)) {
 			pause();
 		}
-		if(isShowing) {
+		if (isShowing) {
 			setTimeout(() => {
 				setIsShowing(false);
-			}, 5000)
-
+			}, 5000);
 		}
 		setCurrentTime(vid.currentTime);
 		setLength(vid.duration);
 	};
 	return (
-		<VideoWrapper
-			onMouseMove={() => mouseMove()}
-		>
+		<VideoWrapper onMouseMove={() => mouseMove()}>
 			<IconWrapper>
 				<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
 				<Icon show={isPlaying} onClick={() => pause()} src={PauseImage} />

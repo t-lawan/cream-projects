@@ -12,9 +12,9 @@ const ProjectsWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	padding: 1rem;
-	@media screen and (min-width: ${size.desktop}) {
+	/* @media screen and (min-width: ${size.desktop}) {
 		grid-template-columns: repeat(6, 1fr);
-	}
+	} */
 
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: repeat(4, 1fr);
