@@ -8,7 +8,11 @@ const VideoWrapper = styled.div`
 	height: 100vh;
 	overflow: hidden;
 `;
-const Video = styled.video``;
+const Video = styled.video`
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+`;
 
 const BackgroundVideo = () => {
 	const { contentfulMeta } = useStaticQuery(
