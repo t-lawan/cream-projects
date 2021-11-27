@@ -17,7 +17,7 @@
     "@contentful/rich-text-types": "^15.3.6",
     "babel-plugin-styled-components": "^1.13.2",
     "bootstrap": "^4.5.0",
-    "gatsby": "^2.21.37",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-manifest": "^3.14.0",

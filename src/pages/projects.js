@@ -53,19 +53,11 @@ const ProjectsPage = () => {
 								}
 								type
 								title
-								video {
-									file {
-										url
-									}
-								}
+								videoUrl
 							}
 						}
 						slug
-						mainVideo {
-							file {
-								url
-							}
-						}
+						mainVideoUrl
 					}
 					projectThumbnails {
 						contentful_id
@@ -99,19 +91,11 @@ const ProjectsPage = () => {
 									}
 									type
 									title
-									video {
-										file {
-											url
-										}
-									}
+									videoUrl
 								}
 							}
 							slug
-							mainVideo {
-								file {
-									url
-								}
-							}
+							mainVideoUrl
 						}
 					}
 				}

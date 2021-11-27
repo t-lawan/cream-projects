@@ -52,18 +52,49 @@ const Contact = () => {
 								}
 								type
 								title
-								video {
-									file {
-										url
-									}
-								}
+								videoUrl
 							}
 						}
 						slug
-						mainVideo {
-							file {
-								url
+						mainVideoUrl
+					}
+					projectThumbnails {
+						contentful_id
+						image {
+							gatsbyImageData(quality: 100)
+						}
+						title
+						project {
+							clientName
+							contentful_id
+							description {
+								raw
 							}
+							detail {
+								detail
+							}
+							seoDescription {
+								seoDescription
+							}
+							seoTitle
+							title
+							year
+							thumbnailImage {
+								gatsbyImageData(placeholder: BLURRED, quality: 100)
+							}
+							contentSections {
+								contentful_id
+								media {
+									image {
+										gatsbyImageData(quality: 100, resizingBehavior: FILL)
+									}
+									type
+									title
+									videoUrl
+								}
+							}
+							slug
+							mainVideoUrl
 						}
 					}
 				}

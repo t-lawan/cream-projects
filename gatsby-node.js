@@ -51,20 +51,10 @@ exports.createPages = ({ graphql, actions }) => {
 									}
 									type
 									title
-									video {
-										file {
-											url
-										}
-									}
 									videoUrl
 								}
 							}
 							slug
-							mainVideo {
-								file {
-									url
-								}
-							}
 							mainVideoUrl
 						}
 					}
