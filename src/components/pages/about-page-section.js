@@ -10,7 +10,7 @@ const AboutPageSectionWrapper = styled.div``;
 const AboutPageGrid = styled.div`
 	display: grid;
 	grid-template-columns: 4fr 2fr;
-	grid-column-gap: 2rem;
+	grid-column-gap: 4rem;
 
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;

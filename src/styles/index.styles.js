@@ -28,7 +28,7 @@ export const Colour = {
 }
 
 export const StandardPadding = styled.div`
-  padding: 1rem;
+  padding: 2rem;
 `
 
 export const GlobalStyle = createGlobalStyle`

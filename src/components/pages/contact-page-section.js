@@ -9,7 +9,7 @@ const ContactPageSectionWrapper = styled.div``;
 const ContactPageGrid = styled.div`
 	display: grid;
 	grid-template-columns: 4fr 2fr;
-	grid-column-gap: 1rem;
+	grid-column-gap: 4rem;
 
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;
