@@ -74,6 +74,7 @@ h1,h2,h3,h4,h5,h6 {
 a {
   text-decoration: none;
   color: white;
+  cursor: url(${SpoonPng}), auto ;
 
 }
 h1 {
