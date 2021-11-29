@@ -44,7 +44,9 @@ export const Hamburger = styled(HamburgerBoring)`
 	  height: 2px;
   }
   @media (max-width: ${size.tablet}) {
-    display: ${(props) => (props.showInMobile ? 'inherit' : 'none')};
+	z-index: ${Layers.NAVBAR};
+    /* display: ${(props) => (props.showInMobile ? 'inherit' : 'none')}; */
+	display: inline-block;
   }
 `;
 

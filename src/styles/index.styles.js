@@ -49,11 +49,12 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
 box-sizing: border-box;
-overflow-x: hidden;
 }
 html,
 body {
 cursor: url(${SpoonPng}), auto ;
+${'' /* overflow-x: hidden; */}
+
 
 margin: 0 auto;
 font-family: 'LifeEFRegular';
