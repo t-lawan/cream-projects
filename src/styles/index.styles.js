@@ -49,10 +49,12 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
 box-sizing: border-box;
-cursor: url(${SpoonPng}), auto ;
+overflow-x: hidden;
 }
 html,
 body {
+cursor: url(${SpoonPng}), auto ;
+
 margin: 0 auto;
 font-family: 'LifeEFRegular';
 background-color: black;

@@ -15,6 +15,7 @@ const VideoWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: crosshair;
 `;
 const Video = styled.video`
 	z-index: ${Layers.BACKGROUND_VIDEO};
@@ -181,7 +182,7 @@ const VideoPlayer = (props) => {
 		<VideoWrapper onMouseMove={() => mouseMove()}>
 			<IconWrapper>
 				<Icon show={!isPlaying} onClick={() => play()} src={PlayImage} />
-				<Icon show={isPlaying} onClick={() => pause()} src={PauseImage} />
+				<Icon show={isPlaying && isShowing} onClick={() => pause()} src={PauseImage} />
 			</IconWrapper>
 
 			<Video
