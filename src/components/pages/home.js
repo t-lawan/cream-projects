@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundVideo from '../background-video/background-video';
-import CreamImg from '../../assets/images/Cream.svg';
-import ProjectsImg from '../../assets/images/Projects.svg';
+import BackgroundVideo from '../background-video/background-video'
+import CreamProjects from '../../assets/images/Cream_Projects_Stack.svg';
 import { size, Layers } from '../../styles/index.styles';
 const HomeWrapper = styled.div``;
 
@@ -35,8 +34,7 @@ const Home = () => {
 		<HomeWrapper>
 			<BackgroundVideo />
 			<MobileLogoWrapper>
-				<Logo src={CreamImg} />
-				<Logo src={ProjectsImg} />
+				<Logo src={CreamProjects} />
 			</MobileLogoWrapper>
 		</HomeWrapper>
 	);

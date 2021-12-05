@@ -31,7 +31,7 @@ const ProjectThumbnail = styled(GatsbyImage)`
 `;
 
 const ProjectLink = styled(Link)`
-
+	margin: 0;
 `;
 const Title = styled.h1`color: white;`;
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from "react-redux"
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { HamburgerBoring } from 'react-animated-burgers';
@@ -10,6 +10,7 @@ import ContactImg from '../../assets/images/Contact.svg';
 import ContactOutlineImg from '../../assets/images/Contact.Outline.svg';
 
 import CreamImg from '../../assets/images/Cream.svg';
+import CreamProjectsInlineImg from '../../assets/images/Cream_Projects_Inline.svg';
 import CreamOutlineImg from '../../assets/images/Cream.Outline.svg';
 
 import ProjectsImg from '../../assets/images/Projects.svg';
@@ -23,8 +24,8 @@ const NavbarWrapper = styled.header`
 	width: 100vw;
 	padding: 1rem;
 	z-index: ${Layers.NAVBAR};
-	opacity: ${props => props.show ? 1.0 : 0.0};
-    transition: opacity 0.5s;
+	opacity: ${(props) => (props.show ? 1.0 : 0.0)};
+	transition: opacity 0.5s;
 
 	@media screen and (max-width: ${size.tablet}) {
 		/* display: none; */
@@ -35,7 +36,7 @@ const NavbarWrapper = styled.header`
 
 const NavLink = styled(Link)`
 	padding-right: 0.5rem;
-	width: ${props => `${25/props.sizef}%`};
+	width: ${(props) => `${25 / props.sizef}%`};
 `;
 
 export const Hamburger = styled(HamburgerBoring)`
@@ -55,7 +56,7 @@ const NavbarDesktopWrapper = styled.div`
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-around;
-    align-items: baseline;
+	align-items: baseline;
 	/* display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-column-gap: 2rem; */
@@ -71,6 +72,7 @@ const NavbarMobileWrapper = styled.div`
 	@media screen and (max-width: ${size.tablet}) {
 		display: flex;
 		justify-content: flex-end;
+		justify-content: space-between;
 		align-items: center;
 		width: 100%;
 		padding: 0.5rem;
@@ -117,6 +119,11 @@ const NavbarImageItem = styled.img`
 		/* fill: pink !important; */
 	}
 `;
+
+const MobileNavbarImage = styled(NavbarImageItem)`
+	width: 60%;
+	margin: 0;
+`
 const Navbar = (props) => {
 	let location = useLocation();
 	const [ isMobileOverlayOpen, setIsMobileOverlayOpen ] = useState(false);
@@ -153,7 +160,6 @@ const Navbar = (props) => {
 		}
 		return response;
 	};
-
 
 	return (
 		<NavbarWrapper show={props.showNavbar} displayBelow={props.displayBelow}>
@@ -215,6 +221,7 @@ const Navbar = (props) => {
 			</NavbarMobileOverlayWrapper>
 
 			<NavbarMobileWrapper>
+				<MobileNavbarImage src={CreamProjectsInlineImg} alt="nav-button" />
 				<Hamburger
 					toggleButton={toggleOpenMobileOverlay}
 					showInMobile={true}
@@ -228,13 +235,10 @@ const Navbar = (props) => {
 	);
 };
 
-const mapStateToProps = state => {
-    return {
-      showNavbar: state.showNavbar,
-    }
-  }
+const mapStateToProps = (state) => {
+	return {
+		showNavbar: state.showNavbar
+	};
+};
 
-  export default connect(
-    mapStateToProps,
-    null
-  )(Navbar);
+export default connect(mapStateToProps, null)(Navbar);

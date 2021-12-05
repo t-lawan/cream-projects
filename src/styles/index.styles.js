@@ -29,6 +29,9 @@ export const Colour = {
 
 export const StandardPadding = styled.div`
   padding: 2rem;
+  @media screen and (max-width: ${size.tablet}) {
+    padding: 1rem;
+	}
 `
 
 export const GlobalStyle = createGlobalStyle`
