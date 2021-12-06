@@ -13,7 +13,7 @@ const ProjectWrapper = styled.div``;
 
 const ProjectDetailText = styled.p`
 	padding-right: 1rem;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 	font-size: 1.25rem;
 	font-family: "VT323";
 	margin-bottom: 0.25rem;
@@ -27,7 +27,7 @@ const ProjectDetailText = styled.p`
 	}
 `;
 const Description = styled.div`
-padding-top: 1rem;
+/* padding-top: 1rem; */
 	> p {
 		/* font-size: 2.25rem; */
 	}
@@ -56,6 +56,13 @@ const ProjectDetailsGrid = styled.div`
 		width: 100%;
 	} */
 `;
+
+const Grid = styled.div`
+	display: grid;
+	grid-template-columns: 7fr 3fr;
+	grid-column-gap: 1rem;
+
+`
 
 const ProjectThumbnail = styled(GatsbyImage)`
 `;
@@ -87,24 +94,29 @@ const ProjectPageSection = (props) => {
 		<ProjectWrapper>
 			<VideoPlayer url={project.mainVideo} />
 			<StandardPadding>
-			<ProjectDetailsGrid>
-
-				{renderTextArr.map((text, index) => (
-					<React.Fragment key={index}>
-						{text.value ? (
-							<>
-								<ProjectDetailText>{text.key}</ProjectDetailText>
-								<ProjectDetailText>{text.value}</ProjectDetailText>
-							</>
-						) : null}
-						
-					</React.Fragment>
-				))}
+				<Grid>
+				<div>
+				<ProjectDetailsGrid>
+					{renderTextArr.map((text, index) => (
+						<React.Fragment key={index}>
+							{text.value ? (
+								<>
+									<ProjectDetailText>{text.key}</ProjectDetailText>
+									<ProjectDetailText>{text.value}</ProjectDetailText>
+								</>
+							) : null}
+							
+						</React.Fragment>
+					))}
 				</ProjectDetailsGrid>
+				</div>
+
 				
 				<Description>
-				{documentToReactComponents(JSON.parse(project.description), richTextOptions)}
+					{documentToReactComponents(JSON.parse(project.description), richTextOptions)}
 				</Description>
+				</Grid>
+
 			</StandardPadding>
 			{project.contentSections ? (
 				<ContentSectionsWrapper>

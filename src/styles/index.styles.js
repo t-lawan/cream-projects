@@ -135,6 +135,7 @@ line-height: 1.15;
 font-style: normal;
 @media screen and (min-width: ${size.laptopL}) {
   font-size: 2.25rem;
+  ${'' /* font-size: 2rem; */}
 
 	}
 @media screen and (max-width: ${size.tablet}) {
