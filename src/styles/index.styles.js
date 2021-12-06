@@ -130,9 +130,13 @@ padding-bottom: 0;
 padding-left: 0;
 padding-right: 0;
 padding-top: 0;
-font-size: 2.25rem;
+font-size: 1.5rem;
 line-height: 1.15;
 font-style: normal;
+@media screen and (min-width: ${size.laptopL}) {
+  font-size: 2.25rem;
+
+	}
 @media screen and (max-width: ${size.tablet}) {
   font-size: 1.25rem;
 

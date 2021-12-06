@@ -11,9 +11,11 @@ const AboutPageGrid = styled.div`
 	display: grid;
 	grid-template-columns: 4fr 2fr;
 	grid-column-gap: 4rem;
-
+	width: 60%;
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;
+		width: 100%;
+
 	}
 `;
 
