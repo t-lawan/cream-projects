@@ -38,6 +38,11 @@ const NavLink = styled(Link)`
 	padding-right: 0.5rem;
 	margin-top: ${(props) => (props.addMargin ? '0.4rem' : 0 )};
 	width: ${(props) => `${25 / props.sizef}%`};
+	@media screen and (max-width: ${size.tablet}) {
+		width: auto;
+		height: 15%;
+		padding: 0rem;
+	}
 `;
 
 export const Hamburger = styled(HamburgerBoring)`
@@ -87,9 +92,10 @@ const NavbarMobileOverlayWrapper = styled.div`
 	position: absolute;
 	@media screen and (max-width: ${size.tablet}) {
 		display: ${(props) => (props.show ? 'flex' : 'none')};
-		justify-content: center;
+		/* justify-content: center;
 		align-items: center;
-		flex-direction: column;
+		 */
+		justify-content: center;
 		width: 100%;
 	}
 `;
@@ -99,7 +105,7 @@ const NavbarMobileLinksWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	width: 60vw;
+	width: 80vw;
 	height: 100vh;
 `;
 
@@ -118,6 +124,11 @@ const NavbarImageItem = styled.img`
 	overflow: hidden;
 	.svg {
 		/* fill: pink !important; */
+	}
+
+	@media screen and (max-width: ${size.tablet}) {
+		height: 100%;
+		width: auto;
 	}
 `;
 
