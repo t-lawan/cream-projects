@@ -36,6 +36,7 @@ const NavbarWrapper = styled.header`
 
 const NavLink = styled(Link)`
 	padding-right: 0.5rem;
+	margin-top: ${(props) => (props.addMargin ? '0.4rem' : 0 )};
 	width: ${(props) => `${25 / props.sizef}%`};
 `;
 
@@ -55,12 +56,12 @@ const NavbarDesktopWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: baseline;
 	/* display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-column-gap: 2rem; */
-	align-items: center;
+	align-items: end;
 	@media screen and (max-width: ${size.tablet}) {
 		display: none;
 	}
@@ -170,7 +171,7 @@ const Navbar = (props) => {
 						alt="nav-button"
 					/>
 				</NavLink>
-				<NavLink to={PageMap.PROJECTS.slug} sizef={1}>
+				<NavLink to={PageMap.PROJECTS.slug} addMargin={true} sizef={1}>
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.PROJECTS.id) ? ProjectsImg : ProjectsOutlineImg}
 						alt="nav-button"
