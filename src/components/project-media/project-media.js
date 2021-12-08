@@ -13,7 +13,7 @@ const ProjectMediaWrapper = styled.div`
 const Image = styled(GatsbyImage)`
     /* display: block; */
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
     height: 100%;
 `;
 
@@ -32,7 +32,7 @@ const ProjectMedia = (props) => {
     return (
         <ProjectMediaWrapper>
             {/* <p> Hey </p> */}
-            {media.type == "IMAGE" ? <Image objectFit={'fill'} image={image} alt={"hey"} /> : null}
+            {media.type == "IMAGE" ? <Image objectFit={'cover'} image={image} alt={"Image"} /> : null}
             {media.type == "VIDEO" ? <Video src={media.videoUrl} autoPlay loop muted /> : null}
         </ProjectMediaWrapper>
     )
