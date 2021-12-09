@@ -135,11 +135,12 @@ const NavbarImageItem = styled.img`
 const MobileNavbarImage = styled(NavbarImageItem)`
 	width: 60%;
 	margin: 0;
+	opacity: ${(props) => (props.show ? 1 : 0)};
+
 `
 const Navbar = (props) => {
 	let location = useLocation();
 	const [ isMobileOverlayOpen, setIsMobileOverlayOpen ] = useState(false);
-
 	const toggleOpenMobileOverlay = () => {
 		setIsMobileOverlayOpen(!isMobileOverlayOpen);
 	};
@@ -233,7 +234,7 @@ const Navbar = (props) => {
 			</NavbarMobileOverlayWrapper>
 
 			<NavbarMobileWrapper>
-				<MobileNavbarImage src={CreamProjectsInlineImg} alt="nav-button" />
+				<MobileNavbarImage show={!isMobileOverlayOpen && !isCurrentPage(PageMap.HOME.id)} src={CreamProjectsInlineImg} alt="nav-button" />
 				<Hamburger
 					toggleButton={toggleOpenMobileOverlay}
 					showInMobile={true}
