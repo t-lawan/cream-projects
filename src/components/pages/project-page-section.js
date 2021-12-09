@@ -52,6 +52,7 @@ const ProjectDetailsGrid = styled.div`
 	grid-template-columns: 1fr 5fr;
 	grid-column-gap: 1rem;
 	width: 100%;
+	margin-bottom: 0.5rem;
 	/* @media screen and (max-width: ${size.tablet}) {
 		width: 100%;
 	} */
@@ -94,8 +95,8 @@ const ProjectPageSection = (props) => {
 		<ProjectWrapper>
 			<VideoPlayer url={project.mainVideo} />
 			<StandardPadding>
-				<Grid>
-				<div>
+				{/* <Grid> */}
+
 				<ProjectDetailsGrid>
 					{renderTextArr.map((text, index) => (
 						<React.Fragment key={index}>
@@ -109,13 +110,13 @@ const ProjectPageSection = (props) => {
 						</React.Fragment>
 					))}
 				</ProjectDetailsGrid>
-				</div>
+
 
 				
 				<Description>
 					{documentToReactComponents(JSON.parse(project.description), richTextOptions)}
 				</Description>
-				</Grid>
+				{/* </Grid> */}
 
 			</StandardPadding>
 			{project.contentSections ? (
