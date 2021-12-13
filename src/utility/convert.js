@@ -26,6 +26,7 @@ export class Convert {
 			contentfulModel.thumbnailImage,
 			contentfulModel.mainVideoUrl,
 			contentfulModel.contentSections,
+			contentfulModel.landingPageMedia,
 			contentfulModel.seoTitle,
 			contentfulModel.seoDescription ? contentfulModel.seoDescription.seoDescription : ''
 		);
