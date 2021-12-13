@@ -36,7 +36,7 @@ const NavbarWrapper = styled.header`
 
 const NavLink = styled(Link)`
 	padding-right: 0.5rem;
-	margin-top: ${(props) => (props.addMargin ? '0.4rem' : 0 )};
+	margin-top: ${(props) => (props.addmargin ? '0.4rem' : 0 )};
 	width: ${(props) => `${25 / props.sizef}%`};
 	@media screen and (max-width: ${size.tablet}) {
 		width: auto;
@@ -183,7 +183,7 @@ const Navbar = (props) => {
 						alt="nav-button"
 					/>
 				</NavLink>
-				<NavLink to={PageMap.PROJECTS.slug} addMargin={true} sizef={1}>
+				<NavLink to={PageMap.PROJECTS.slug} addmargin={"true"} sizef={1}>
 					<NavbarImageItem
 						src={isCurrentPage(PageMap.PROJECTS.id) ? ProjectsImg : ProjectsOutlineImg}
 						alt="nav-button"
