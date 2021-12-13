@@ -9,6 +9,7 @@ import ProjectMedia from '../project-media/project-media';
 import { Link } from 'gatsby';
 import { PageMap } from '../../utility/config';
 import VideoPlayer from '../video-player/video-player';
+import ProjectJumbotron from '../project-jumbotron/project-jumbotron';
 const ProjectWrapper = styled.div``;
 
 const ProjectDetailText = styled.p`
@@ -93,7 +94,8 @@ const ProjectPageSection = (props) => {
 
 	return (
 		<ProjectWrapper>
-			<VideoPlayer url={project.mainVideo} />
+			<ProjectJumbotron jumbotron={project.jumbotron} />
+			{/* <VideoPlayer url={project.mainVideo} /> */}
 			<StandardPadding>
 				{/* <Grid> */}
 
