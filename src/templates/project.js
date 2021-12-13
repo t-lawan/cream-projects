@@ -7,7 +7,6 @@ import ProjectPageSection from '../components/pages/project-page-section';
 
 const ProjectPage = (props) => {
       let project = Convert.toProjectModel(props.pageContext)
-    
       return (
         <Layout withPadding={false} seoTitle={project.seoTitle}>
           <ProjectPageSection project={project} />
