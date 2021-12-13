@@ -56,6 +56,15 @@ exports.createPages = ({ graphql, actions }) => {
 							}
 							slug
 							mainVideoUrl
+							landingPageMedia {
+								contentful_id
+								title
+								type
+								videoUrl
+								image {
+									gatsbyImageData
+								}
+							}
 						}
 					}
 				}
