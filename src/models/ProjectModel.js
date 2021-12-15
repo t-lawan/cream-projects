@@ -18,13 +18,13 @@ export class ProjectModel {
     contentSections;
 
 
-    constructor(id, title, description, slug, detail, clientName, year, thumbnailImage, mainVideo, contentSections,jumbotron, seoTitle, seoDescription) {
+    constructor(id, title, description, slug, detail, clientName, year, thumbnailImage, contentSections,jumbotron, seoTitle, seoDescription) {
         this.title = title;
         this.id = id;
         this.description = description;
         this.detail = detail;
         this.slug = slug;
-        this.mainVideo = mainVideo;
+        // this.mainVideo = mainVideo;
         this.clientName = clientName;
         this.year = year;
         this.thumbnailImage = thumbnailImage;
