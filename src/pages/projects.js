@@ -49,7 +49,7 @@ const ProjectsPage = () => {
 							contentful_id
 							media {
 								image {
-									gatsbyImageData(quality: 100, resizingBehavior: FILL)
+									gatsbyImageData(quality: 100)
 								}
 								type
 								title
@@ -57,7 +57,6 @@ const ProjectsPage = () => {
 							}
 						}
 						slug
-						mainVideoUrl
 					}
 					projectThumbnails {
 						contentful_id
@@ -87,7 +86,7 @@ const ProjectsPage = () => {
 								contentful_id
 								media {
 									image {
-										gatsbyImageData(quality: 100, resizingBehavior: FILL)
+										gatsbyImageData(quality: 100)
 									}
 									type
 									title
@@ -95,7 +94,6 @@ const ProjectsPage = () => {
 								}
 							}
 							slug
-							mainVideoUrl
 						}
 					}
 				}
