@@ -48,7 +48,7 @@ const Contact = () => {
 							contentful_id
 							media {
 								image {
-									gatsbyImageData(quality: 100, resizingBehavior: FILL)
+									gatsbyImageData(quality: 100)
 								}
 								type
 								title
@@ -56,7 +56,6 @@ const Contact = () => {
 							}
 						}
 						slug
-						mainVideoUrl
 					}
 					projectThumbnails {
 						contentful_id
@@ -86,7 +85,7 @@ const Contact = () => {
 								contentful_id
 								media {
 									image {
-										gatsbyImageData(quality: 100, resizingBehavior: FILL)
+										gatsbyImageData(quality: 100)
 									}
 									type
 									title
@@ -94,7 +93,6 @@ const Contact = () => {
 								}
 							}
 							slug
-							mainVideoUrl
 						}
 					}
 				}
