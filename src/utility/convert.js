@@ -24,7 +24,7 @@ export class Convert {
 			contentfulModel.clientName,
 			contentfulModel.year,
 			contentfulModel.thumbnailImage,
-			contentfulModel.mainVideoUrl,
+			// contentfulModel.mainVideoUrl,
 			contentfulModel.contentSections,
 			contentfulModel.landingPageMedia,
 			contentfulModel.seoTitle,
