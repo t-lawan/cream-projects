@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
 								contentful_id
 								media {
 									image {
-										gatsbyImageData(quality: 100, resizingBehavior: FILL)
+										gatsbyImageData(quality: 100, height: 1000)
 									}
 									type
 									title
@@ -55,7 +55,6 @@ exports.createPages = ({ graphql, actions }) => {
 								}
 							}
 							slug
-							mainVideoUrl
 							landingPageMedia {
 								contentful_id
 								title
