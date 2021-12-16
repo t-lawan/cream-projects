@@ -9,6 +9,7 @@ const ProjectMediaWrapper = styled.div`
     /* position: relative; */
     /* background:red; */
     text-align: center;
+    max-height: 100vh;
 `
 const Image = styled(GatsbyImage)`
     /* display: block; */

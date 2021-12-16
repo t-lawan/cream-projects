@@ -6,12 +6,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const ProjectTitleWrapper = styled.div`
     position: relative;
+    height: 100%;
+    width: 100%;
 `
 const ProjectThumbnail = styled(GatsbyImage)`
     display: block;
     height: 100%;
     width: 100%;
-
+    object-fit: cover;
 `;
 const ProjectOverlay = styled.div`
     position: absolute;

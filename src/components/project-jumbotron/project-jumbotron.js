@@ -15,7 +15,7 @@ const Image = styled(GatsbyImage)`
     /* display: block; */
     width: 100%;
     object-fit: cover;
-    height: 100%;
+    height: 100vh;
 `;
 
 
