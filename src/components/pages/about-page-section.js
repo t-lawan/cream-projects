@@ -67,7 +67,7 @@ const AboutPageSection = (props) => {
 						</ListSection>
 
 						<ListSection>
-							<Title>Selected clients and collaborators </Title>
+							<Title>Extended Collaborators </Title>
 							<TextWrapper>
 								{documentToReactComponents(JSON.parse(page.selectedClientsAndCollaborators), richTextOptions)}
 							</TextWrapper>
@@ -76,7 +76,7 @@ const AboutPageSection = (props) => {
 						</ListSection>
 
 						<ListSection>
-							<Title>Press </Title>
+							<Title>Selected Clients </Title>
 							<TextWrapper>
 								{documentToReactComponents(JSON.parse(page.pressText), richTextOptions)}
 

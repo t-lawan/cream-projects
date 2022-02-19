@@ -52,13 +52,15 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
 box-sizing: border-box;
+
 }
 html,
 body {
 cursor: url(${SpoonPng}), auto ;
 ${'' /* overflow-x: hidden; */}
 
-
+overflow-x: hidden;
+${'' /* overflow-y: hidden; */}
 margin: 0 auto;
 font-family: 'LifeEFRegular';
 background-color: black;
