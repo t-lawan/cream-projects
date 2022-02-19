@@ -21,7 +21,8 @@ import { size, Layers } from '../../styles/index.styles';
 
 const NavbarWrapper = styled.header`
 	position: ${(props) => (props.displayBelow ? 'relative' : 'fixed')};
-	width: 100vw;
+	width: ${(props) => (props.displayBelow ? 'auto' : '100vw')};
+	/* width: 100vw; */
 	padding: 1rem;
 	z-index: ${Layers.NAVBAR};
 	opacity: ${(props) => (props.show ? 1.0 : 0.0)};
