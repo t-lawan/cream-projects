@@ -45,6 +45,14 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+          workboxConfig: {
+              globPatterns: ['**/*.{js,jpg,png,html,css}'],
+          },
+      }
+  },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
