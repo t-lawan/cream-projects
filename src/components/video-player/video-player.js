@@ -10,8 +10,8 @@ import { showNavbar, hideNavbar } from '../../store/actions';
 const VideoWrapper = styled.div`
 	position: relative;
 	width: 100vw;
-	height: 95vh;
-	overflow: hidden;
+	height: 100vh;
+	/* overflow: hidden; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
