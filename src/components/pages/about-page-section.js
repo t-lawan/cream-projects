@@ -9,9 +9,9 @@ const AboutPageSectionWrapper = styled.div``;
 
 const AboutPageGrid = styled.div`
 	display: grid;
-	grid-template-columns: 4fr 2fr;
+	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 4rem;
-	width: 60%;
+	width: 100%;
 	@media screen and (max-width: ${size.tablet}) {
 		grid-template-columns: 1fr;
 		width: 100%;
@@ -59,7 +59,7 @@ const AboutPageSection = (props) => {
 					{/* Second Column */}
 					<Column>
 						<ListSection>
-							<Title>Staff </Title>
+							<Title>Team </Title>
 							<TextWrapper>
 								{documentToReactComponents(JSON.parse(page.staff), richTextOptions)}
 							</TextWrapper>
