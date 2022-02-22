@@ -15,8 +15,13 @@ const Image = styled(GatsbyImage)`
     /* display: block; */
     width: 100%;
     object-fit: cover;
-    height: 100vh;
+    height: 100%;
 `;
+
+const JumbotronMediaWrapper = styled.div`
+    height: 100vh;
+    width: 100vw;
+`
 
 
 const ProjectJumbotron = (props) => {
@@ -29,8 +34,11 @@ const ProjectJumbotron = (props) => {
     return (
         <ProjectJumbrotronWrapper>
             {/* <p> Hey </p> */}
+            <JumbotronMediaWrapper>
             {jumbotron.type === "IMAGE" ? <Image objectFit={'cover'} image={image} alt={"Image"} /> : null}
             {jumbotron.type === "VIDEO" ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
+            </JumbotronMediaWrapper>
+
         </ProjectJumbrotronWrapper>
     )
 }
