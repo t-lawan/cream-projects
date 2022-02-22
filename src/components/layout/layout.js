@@ -11,7 +11,9 @@ const LayoutWrapper = styled.div`/* padding: 1rem;
   max-height: 100vh;
   max-width: 100vw; */`;
 
-const MainWrapper = styled.main``;
+const MainWrapper = styled.main`
+	position: relative;
+`;
 
 const Layout = (props) => {
 	useEffect(() => {
