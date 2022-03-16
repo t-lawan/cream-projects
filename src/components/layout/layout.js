@@ -26,7 +26,7 @@ const Layout = (props) => {
 		<LayoutWrapper>
 			<GlobalStyle />
 			<SEO title={props.seoTitle} />
-			{/* <Navbar displayBelow={props.displayBelow} /> */}
+			<Navbar displayBelow={props.displayBelow} />
 			<MainWrapper>{props.children}</MainWrapper>
 		</LayoutWrapper>
 	);
