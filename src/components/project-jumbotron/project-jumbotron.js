@@ -7,7 +7,7 @@ import VideoPlayer from '../video-player/video-player';
 
 
 const ProjectJumbrotronWrapper = styled.div`
-    /* position: relative; */
+    position: relative;
     /* background:red; */
     text-align: center;
 `

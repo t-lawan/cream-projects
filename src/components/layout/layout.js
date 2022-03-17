@@ -12,7 +12,7 @@ const LayoutWrapper = styled.div`/* padding: 1rem;
   max-width: 100vw; */`;
 
 const MainWrapper = styled.main`
-	position: relative;
+	/* position: relative; */
 `;
 
 const Layout = (props) => {
