@@ -58,7 +58,7 @@ html,
 body {
 cursor: url(${SpoonPng}), auto ;
 ${'' /* overflow-x: hidden; */}
-${'' /* -webkit-overflow-scrolling: touch; */}
+-webkit-overflow-scrolling: auto;
 overflow-x: hidden;
 ${'' /* overflow-y: hidden; */}
 margin: 0 auto;
