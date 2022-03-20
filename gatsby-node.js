@@ -41,13 +41,13 @@ exports.createPages = ({ graphql, actions }) => {
 							title
 							year
 							thumbnailImage {
-								gatsbyImageData(placeholder: NONE, quality: 100, height: 1000)
+								gatsbyImageData(quality: 100, height: 1000)
 							}
 							contentSections {
 								contentful_id
 								media {
 									image {
-										gatsbyImageData(placeholder: NONE, quality: 100, height: 1000)
+										gatsbyImageData(quality: 100, height: 1000)
 									}
 									type
 									title
@@ -61,7 +61,7 @@ exports.createPages = ({ graphql, actions }) => {
 								type
 								videoUrl
 								image {
-									gatsbyImageData(placeholder: NONE, quality: 100, height: 1000)
+									gatsbyImageData(quality: 100, height: 1000)
 								}
 							}
 						}
