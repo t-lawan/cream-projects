@@ -33,10 +33,10 @@ module.exports = {
       options: {
         defaults: {
           formats: [`auto`, `webp`],
-          placeholder: `dominantColor`,
+          placeholder: `dominantColor`, //dominantColor
           quality: 100,
           // breakpoints: [750, 1080, 1366, 1920],
-          backgroundColor: `black`,
+          // backgroundColor: `black`,
           tracedSVGOptions: {},
           blurredOptions: {},
           jpgOptions: {},
