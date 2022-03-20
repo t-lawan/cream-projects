@@ -12,7 +12,6 @@ module.exports = {
     'gatsby-plugin-smoothscroll',
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
-    // `gatsby-plugin-image`,
     'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-html-attributes',
@@ -27,8 +26,28 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    'gatsby-plugin-sharp',
+    // 'gatsby-plugin-sharp',
+    
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 100,
+          // breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `black`,
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        }
+      }
+    },
     'gatsby-transformer-sharp',
+    `gatsby-plugin-image`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
