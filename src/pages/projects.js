@@ -43,7 +43,7 @@ const ProjectsPage = () => {
 						title
 						year
 						thumbnailImage {
-							gatsbyImageData(placeholder: BLURRED, quality: 100)
+							gatsbyImageData(quality: 100)
 						}
 						contentSections {
 							contentful_id
@@ -80,7 +80,7 @@ const ProjectsPage = () => {
 							title
 							year
 							thumbnailImage {
-								gatsbyImageData(placeholder: BLURRED, quality: 100)
+								gatsbyImageData(quality: 100)
 							}
 							contentSections {
 								contentful_id
