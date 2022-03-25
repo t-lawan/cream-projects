@@ -61,7 +61,7 @@ const ProjectsPage = () => {
 					projectThumbnails {
 						contentful_id
 						image {
-							gatsbyImageData(quality: 100)
+							gatsbyImageData(quality: 50)
 						}
 						title
 						project {
