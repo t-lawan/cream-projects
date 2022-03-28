@@ -43,13 +43,13 @@ const ProjectsPage = () => {
 						title
 						year
 						thumbnailImage {
-							gatsbyImageData(quality: 100)
+							gatsbyImageData(quality: 70)
 						}
 						contentSections {
 							contentful_id
 							media {
 								image {
-									gatsbyImageData(quality: 100, height: 1000)
+									gatsbyImageData(quality: 70, height: 1000)
 								}
 								type
 								title
@@ -80,13 +80,13 @@ const ProjectsPage = () => {
 							title
 							year
 							thumbnailImage {
-								gatsbyImageData(quality: 100)
+								gatsbyImageData(quality: 70)
 							}
 							contentSections {
 								contentful_id
 								media {
 									image {
-										gatsbyImageData(quality: 100, height: 1000)
+										gatsbyImageData(quality: 70, height: 1000)
 									}
 									type
 									title
