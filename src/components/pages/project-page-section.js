@@ -95,7 +95,6 @@ const ProjectPageSection = (props) => {
 	return (
 		<ProjectWrapper>
 			<ProjectJumbotron jumbotron={project.jumbotron} />
-			{/* <VideoPlayer url={project.mainVideo} /> */}
 			<StandardPadding>
 				{/* <Grid> */}
 

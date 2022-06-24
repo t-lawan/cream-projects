@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import PropTypes from "prop-types";
 import VideoPlayer from '../video-player/video-player';
+import GenericVideoPlayer from '../generic-video-player/generic-video-player';
 
 
 const ProjectJumbrotronWrapper = styled.div`
@@ -37,6 +38,9 @@ const ProjectJumbotron = (props) => {
             <JumbotronMediaWrapper>
             {jumbotron.type === "IMAGE" ? <Image objectFit={'cover'} image={image} alt={"Image"} /> : null}
             {jumbotron.type === "VIDEO" ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
+            {jumbotron.type === "VIMEO_VIDEO" ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
+            {/* {jumbotron.type === "VIDEO" ? <GenericVideoPlayer url={jumbotron.videoUrl} /> : null} */}
+            {/* {jumbotron.type === "VIMEO_VIDEO" ? <GenericVideoPlayer /> : null} */}
             </JumbotronMediaWrapper>
 
         </ProjectJumbrotronWrapper>
