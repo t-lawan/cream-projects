@@ -23,50 +23,52 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-				allContentfulProject {
-					edges {
-						node {
-							clientName
-							contentful_id
-							description {
-								raw
-							}
-							detail {
-								detail
-							}
-							seoDescription {
-								seoDescription
-							}
-							seoTitle
-							title
-							year
-							thumbnailImage {
-								gatsbyImageData(quality: 70, height: 1000)
-							}
-							contentSections {
-								contentful_id
-								media {
-									image {
-										gatsbyImageData(quality: 70, height: 1000)
-									}
-									type
-									title
-									videoUrl
-								}
-							}
-							slug
-							landingPageMedia {
-								contentful_id
-								title
-								type
-								videoUrl
-								image {
-									gatsbyImageData(quality: 70, height: 1000)
-								}
-							}
-						}
-					}
+		allContentfulProject {
+			edges {
+			  node {
+				clientName
+				contentful_id
+				description {
+				  raw
 				}
+				detail {
+				  detail
+				}
+				seoDescription {
+				  seoDescription
+				}
+				seoTitle
+				title
+				year
+				thumbnailImage {
+				  gatsbyImageData(quality: 70, height: 1000)
+				}
+				contentSections {
+				  contentful_id
+				  media {
+					image {
+					  gatsbyImageData(quality: 70, height: 1000)
+					}
+					type
+					title
+					videoUrl
+					vimeoId
+				  }
+				}
+				slug
+				landingPageMedia {
+				  contentful_id
+				  title
+				  type
+				  videoUrl
+				  vimeoId
+				  image {
+					gatsbyImageData(quality: 70, height: 1000)
+				  }
+				}
+			  }
+			}
+		  }
       }
     `,
     { limit: 1000 }

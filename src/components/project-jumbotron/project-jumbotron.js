@@ -37,10 +37,8 @@ const ProjectJumbotron = (props) => {
             {/* <p> Hey </p> */}
             <JumbotronMediaWrapper>
             {jumbotron.type === "IMAGE" ? <Image objectFit={'cover'} image={image} alt={"Image"} /> : null}
-            {jumbotron.type === "VIDEO" ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
-            {jumbotron.type === "VIMEO_VIDEO" ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
-            {/* {jumbotron.type === "VIDEO" ? <GenericVideoPlayer url={jumbotron.videoUrl} /> : null} */}
-            {/* {jumbotron.type === "VIMEO_VIDEO" ? <GenericVideoPlayer /> : null} */}
+            {jumbotron.type === "VIDEO" && jumbotron.videoUrl ? <GenericVideoPlayer url={jumbotron.videoUrl} /> : null}
+            {jumbotron.type === "VIMEO_VIDEO" && jumbotron.vimeoId ? <GenericVideoPlayer url={jumbotron.vimeoId} /> : null}
             </JumbotronMediaWrapper>
 
         </ProjectJumbrotronWrapper>

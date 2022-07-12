@@ -29,7 +29,7 @@ const Video = styled.video`
 	}
 `;
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
 	z-index: ${Layers.VIDEO_PLAYER_ICONS};
 	position: absolute;
 	width: 100%;
@@ -42,7 +42,7 @@ const IconWrapper = styled.div`
 	align-items: center;
 `;
 
-const Icon = styled.img`
+export const Icon = styled.img`
 	/* position: absolute;
 	bottom: 45%;
 	left: 45%;
