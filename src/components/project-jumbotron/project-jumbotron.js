@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
 import PropTypes from "prop-types";
 import VideoPlayer from '../video-player/video-player';
 import GenericVideoPlayer from '../generic-video-player/generic-video-player';
@@ -37,7 +36,7 @@ const ProjectJumbotron = (props) => {
             {/* <p> Hey </p> */}
             <JumbotronMediaWrapper>
             {jumbotron.type === "IMAGE" ? <Image objectFit={'cover'} image={image} alt={"Image"} /> : null}
-            {jumbotron.type === "VIDEO" && jumbotron.videoUrl ? <GenericVideoPlayer url={jumbotron.videoUrl} /> : null}
+            {jumbotron.type === "VIDEO" && jumbotron.videoUrl ? <VideoPlayer url={jumbotron.videoUrl} /> : null}
             {jumbotron.type === "VIMEO_VIDEO" && jumbotron.vimeoId ? <GenericVideoPlayer url={jumbotron.vimeoId} /> : null}
             </JumbotronMediaWrapper>
 
